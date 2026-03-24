@@ -1,4 +1,4 @@
-# Operaldi
+# Vivaldi-custom.css
 My custom CSS for Vivaldi, inspired by Opera
 
 Screenshots:
