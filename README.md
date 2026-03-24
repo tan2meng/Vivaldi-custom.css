@@ -15,7 +15,3 @@ Screenshots:
   3) Open Vivaldi Settings
   4) Appearance > CUSTOM UI MODIFICATIONS and select the folder in which you downloaded the CSS.
   5) Appearance > User Interface Density > Regular
-  6) Themes > New Theme... and follow the screenshots below:
-
-Working great with Hoverflow:
-https://chromewebstore.google.com/detail/hoverflow/hejgdekfjconideemhoabeiadaeikpli
