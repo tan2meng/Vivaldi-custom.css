@@ -1,18 +1,3 @@
-/* TODO
-
-opravit:
-drag tile vypadá divně když je scrollbar
-zkusit barvu skupiny nastavit když tam neni nic nastavený
-zkusit upravit označený taby ctrl (asi nejde?)
-
-
-
-moooooooooooožnááá:
-horizontal tabs?? #tabs-tabbar-container.left
-arc like pinned taby?
-
-*/ 
-
 :root {
     --lessTransparent: transparent 50%; /* TRANSPARENCY OF BROWSER - 50% */
     --blur: blur(15px); /* BLUR OF BROWSER - 15px */
@@ -135,12 +120,12 @@ input[type=checkbox]:before, input[type=checkbox]:after { /* COLOR OF ICON IN CH
 }
 
 .SearchField:hover, .UrlBar-AddressField:hover { /* HOVER OF SEARCHBAR */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .color-behind-tabs-on .SearchField:focus-within, .color-behind-tabs-on .MailSearchField-Inner:focus-within, .color-behind-tabs-on .UrlBar-AddressField:focus-within {
     outline: none; /* REMOVE OF SEARCHBAR BORDER WHEN IN FOCUS */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .UrlFragment-Wrapper--ShouldHighlight {
@@ -169,11 +154,11 @@ li.omni-clickable:not(:last-child) { /* ADDING GAP BETWEEN LINKS IN DROPDOWN URL
 }
 
 .mainbar button:hover { /* HOVER OF MAINBAR BUTTONS */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 #browser:not(.tabs-top) .vivaldi:hover, #browser:not(.tabs-top) .vivaldi:focus-visible { /* HOVER OF HAMBURGER BUTTON */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .disable-titlebar.address-top#browser:not(.tabs-top) .vivaldi {
@@ -191,19 +176,19 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 .color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.button-pressed, .color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.button-pressed, .color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button.button-pressed {
-    background-image: linear-gradient(var(--colorBg),var(--colorBg)); /* CHANGE COLOR WHEN ICON IS ACTIVE */
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 #browser.win .window-buttongroup button:hover {
-    background-color: var(--colorBg); /* HOVER OF WINDOW BUTTONS LIGHT THEME*/
+    background-color: transparent;
 }
 
 .theme-dark#browser.win .window-buttongroup button:hover {
-    background-color: var(--colorBg); /* HOVER OF WINDOW BUTTONS DARK THEME */
+    background-color: transparent;
 }
 
 #browser.win .window-buttongroup button.window-close:hover {
-    background-color: var(--colorBg); /* HOVER OF WINDOW CLOSE BUTTON */
+    background-color: transparent;
     fill: var(--colorFg);
 }
 
@@ -220,6 +205,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     border-color: transparent;
 }
 
+
 /* WORKSPACES */
 
 .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar:hover, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar:hover {
@@ -232,7 +218,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar > button:active, #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar > button:active, #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar:not(.toolbar-spacer, .toolbar-spacer-flexible) > button:not([disabled]):hover, #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar:not(.toolbar-spacer, .toolbar-spacer-flexible) > button:not([disabled]):hover {
-    background-color: var(--colorBg); /* HOVER OF WORKSPACES */
+    background-color: color-mix(in srgb, var(--colorBg), white 25%); /* HOVER OF WORKSPACES */
 }
 
 .tabs-left #tabs-container:has(.tab-strip.overflow) .toolbar-tabbar-before, .tabs-left #tabs-container:has(.tab-strip.overflow) .toolbar-tabbar-after, .tabs-right #tabs-container:has(.tab-strip.overflow) .toolbar-tabbar-before, .tabs-right #tabs-container:has(.tab-strip.overflow) .toolbar-tabbar-after {
@@ -306,7 +292,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #tabs-container .tab:not(.tab-group,.tab.active):hover { /* HOVER OF TABS PART 1 */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .color-behind-tabs-on .tab-wrapper:hover .tab:not(.active) { /* HOVER OF TABS PART 2 */
@@ -327,7 +313,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #browser .tab-position.colored.accordion-toggle-arrow:hover, #browser .tab-position.colored .tab:not(.active):hover {
-    background-color: var(--colorBg);  /* BG COLOR OF HOVER TAB IN GROUP */ 
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);  /* BG COLOR OF HOVER TAB IN GROUP */ 
 }
 
 #browser .tab-position.colored.accordion-toggle-arrow, #browser .tab-position.colored .tab.active {
@@ -366,12 +352,9 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     min-width: 34px;
 } /* BIGGER HOVER EFFECT OF TRASH AND CLOUD ICONS */
 
-#tabs-tabbar-container .toolbar-tabbar-after { /* MOVING ALL ICONS UNDER TABS TO END OF FLEX */
+#tabs-tabbar-container .toolbar-tabbar-after { /* MOVING ALL ICONS UNDER TABS TO END OF FLEX + GAP */
     align-content: flex-end;
-}
-
-#tabs-tabbar-container .toolbar-tabbar-after {
-    gap: 4px; /* ADJUSTING GAP BETWEEN ICONS */
+    gap: 4px;
 }
 
 /* SIDEBAR */
@@ -385,16 +368,17 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #panels-container {
-    padding: 5px 0px; /* MORE SPACE UNDER SETTINGS ICON */
-    min-width: 44px; /* FIXING SIDEBAR PART 1 */
+    padding: 5px 0px;
+    min-width: 44px;
+    background-color: transparent;
 }
 
-#panels-container[style*="min(0px"] { /* REMOVE PART 1 IF PANEL IS HIDDEN */
+#panels-container[style*="min(0px"] {
     min-width: 0 !important;
     padding-bottom: 0 !important;
 }
 
-.density-on #switch { /* FIXING SIDEBAR PART 2 + ADJUSTING */
+.density-on #switch {
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
@@ -402,10 +386,6 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     padding-bottom: 5px;
     padding-right: 5px;
     min-width: 44px;
-}
-
-#panels-container { /* FIXING SIDEBAR PART 3 */
-    background-color: transparent;
 }
 
 #main.right #panels-container { /* FIXING SIDEBAR PART 4 - TABSLEFT */
@@ -433,11 +413,11 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #panels-container button:hover { /* HOVER OF BUTTONS ON SIDEBAR */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .ExtensionIcon--Hidden:hover, .ExtensionIcon--Hidden:active { /* HOVER OF HIDDEN EXTENSIONS */
-    background-color: var(--colorBg);
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
     border-radius: var(--radius);
 }
 
@@ -447,11 +427,11 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 .toolbar-panel > .button-toolbar > button.button-pressed, .toolbar-panel .toolbar-extensions .button-toolbar > button.button-pressed, .toolbar-panel .page-zoom-controls .button-toolbar > button.button-pressed {
-    background-color: var(--colorBg); /* CHANGING BG COLOR AND ICON COLOR WHEN DOWNLOAD ICON IS ACTIVE */
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 .density-on #switch .addwebpanel-wrapper > button.active button, .density-on #switch > .button-toolbar.active button, .density-on #switch > * > .button-toolbar.active button, .density-on #switch > button.active button {
-    background-color: var(--colorBg); /* CHANGING BG COLOR AND ICON COLOR WHEN BOOKMARK ICON IS ACTIVE */
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
 }
 
 /* WEB PANELS */
@@ -495,6 +475,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     right: auto;
     left: -3px;
     opacity: 0;
+
 }
 
 /*
@@ -652,6 +633,7 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 }
 
 .toolbar-default .button-toolbar > button:enabled.button-pressed { /* FIXING ACTIVE BUTTON */
+    background-color: color-mix(in srgb, var(--colorBg), white 25%);
     background-image: none;
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
@@ -721,11 +703,8 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
-.calendar-add-event-button { /* BG COLOR OF DAYS IN WEEK CALENDAR PART 3 */
+.calendar-add-event-button { /* BG COLOR + REMOVING BORDER + RADIUS IN WEEK CALENDAR */
     background-image: none;
-}
-
-.calendar-add-event-button { /* REMOVING BORDER AND CHANGING RADIUS IN WEEK CALENDAR */
     border: none;
     border-radius: var(--radius);
 }
@@ -1059,12 +1038,6 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     height: 34px;
 }
 
-/* VIVALDI SETTINGS */
-
-.vivaldi-settings .settings-content {
-    background-color: color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent)); /* VIVALDI SETTINGS WERENT READABLE WITH COLORBG */
-}
-
 /* CTRL+F */
 
 .find-in-page-wrapper {
@@ -1229,12 +1202,9 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     outline: none;
 }
 
-.TabButtonPopup > header .qc-entry { /* REMOVING BORDER OF SEARCHBAR WHEN NOT IN FOCUS */
+.TabButtonPopup > header .qc-entry { /* REMOVING BORDER + BG COLOR OF SEARCHBAR */
     border: 1px solid transparent;
-}
-
-.TabButtonPopup > header .qc-entry { /* BG COLOR OF SEARCH BAR */
-    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
 .TabButtonPopup > header .button-toolbar > button:hover { /* BG COLOR OF HOVER OF MENU ICON */
@@ -1458,4 +1428,56 @@ button.privacy-btn-icon { /* FIXING PRIVACY BUTTON */
 .TranslatePopup-Buttons-MenuButton { /* FIXING OPTIONS BUTTON */
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
     border-color: transparent;
+}
+
+/* BOOKMARKS BAR - 与 PANEL 保持一致 */
+
+#browser .bookmark-bar {
+    background-color: color-mix(in srgb, var(--colorBg), transparent 50%) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    margin: 0px 5px;
+    border-radius: var(--radius);
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#browser .bookmark-bar .observer {
+    background-color: transparent !important;
+    border-radius: inherit;
+}
+
+#browser .bookmark-bar button {
+    background-color: transparent !important;
+}
+
+#browser .bookmark-bar button:hover {
+    background-color: color-mix(in srgb, var(--colorBg), white 25%) !important;
+}
+
+#browser .window-buttongroup.on-mainbar {
+    background-color: transparent !important;
+}
+
+/* 书签栏文件夹下拉菜单背景 - 与 panel 保持一致 */
+
+.bookmark-bar .menu > ul,
+.bookmark-bar .menu ul ul,
+.bookmark-bar button > .menu > ul,
+.bookmark-bar button .menu ul ul,
+.bookmark-bar .menu ul {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)) !important;
+    backdrop-filter: var(--blur) !important;
+    -webkit-backdrop-filter: var(--blur) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: none !important;
+}
+
+
+/* AUTO-HIDE 模式删除 wrapper 圆角和背景 */
+
+.auto-hide-wrapper {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
 }
